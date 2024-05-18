@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Dashboard</h2>
+  <div *ngIf="appointments.length > 0; else noAppointments">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let appointment of appointments">
+        {{ appointment.date }} - {{ appointment.time }} - {{ appointment.status }}
+        <button (click)="markAsDone(appointment.id)" [disabled]="appointment.status !== 'SCHEDULED'" class="btn btn-success btn-sm float-end">Done</button>
+        <button (click)="cancel(appointment.id)" [disabled]="appointment.status !== 'SCHEDULED'" class="btn btn-danger btn-sm float-end me-2">Cancel</button>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noAppointments>
+    <p>No appointments found.</p>
+  </ng-template>
+</div>
