@@ -13,9 +13,8 @@ import { RegisterComponent } from './components/register/register.component';
   ],
   imports: [
     CommonModule,
-    FormsModule, // Adicione o FormsModule aqui
-    // Outros módulos de que seu AuthModule depende
-    RouterModule // Se você precisar de rotas específicas para o módulo de autenticação
+    FormsModule, // fomulario
+    RouterModule // api - ver como funciona
   ],
   exports: [
     LoginComponent,

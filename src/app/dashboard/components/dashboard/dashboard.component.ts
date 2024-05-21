@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
         this.appointments = data;
       },
       (error) => {
-        console.error('Erro ao carregar consultas', error);
+        console.error('Erro ao carregar ', error);
       }
     );
   }
@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
           this.loadAppointments();
         },
         (error) => {
-          console.error('Erro ao marcar como concluído', error);
+          console.error('Erro ao marcar concluir', error);
         }
       );
     }
@@ -61,9 +61,9 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteAppointment(id: number): void {
-    this.appointmentService.deleteAppointment(id).subscribe(
+    this.appointmentService.deleteAppointment(id).subscribe( //?????
       () => {
-        this.loadAppointments(); // Recarrega a lista após deletar
+        this.loadAppointments();
       },
       (error) => {
         console.error('Erro ao deletar consulta', error);
@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
 
   editAppointment(appointment: any): void {
     // Lógica para editar uma consulta
-    console.log('Edit appointment', appointment);
+    console.log('Editar consulta', appointment);
   }
 }
 
